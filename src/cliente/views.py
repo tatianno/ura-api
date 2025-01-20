@@ -11,7 +11,7 @@ from boleto.serializers import BoletoModelSerializer
 class ClienteModelViewSet(GenericViewSet):
     queryset = Cliente.objects.all()
     permission_classes = (IsAuthenticated, )
-    serializer_class = ClienteDocumentoSerializer
+    serializer_class_documento = ClienteDocumentoSerializer
     serializer_class_boleto = BoletoModelSerializer
     serializer_class_cliente = ClienteModelSerializer
 

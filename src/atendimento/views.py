@@ -8,3 +8,6 @@ class ProtocoloAtendimentoModelViewSet(mixins.CreateModelMixin, GenericViewSet):
     queryset = ProtocoloAtendimento.objects.all()
     serializer_class = ProtocoloAtendimentoModelSerializer
     permission_classes = (IsAuthenticated,)
+
+    def create(self, request, *args, **kwargs):
+        return super().create(request, *args, **kwargs)
