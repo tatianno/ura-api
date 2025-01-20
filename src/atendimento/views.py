@@ -10,4 +10,9 @@ class ProtocoloAtendimentoModelViewSet(mixins.CreateModelMixin, GenericViewSet):
     permission_classes = (IsAuthenticated,)
 
     def create(self, request, *args, **kwargs):
+        '''
+        Criar protocolo de atendimento
+
+        Endpoint permite criação de protocolos de atendimento.
+        '''
         return super().create(request, *args, **kwargs)

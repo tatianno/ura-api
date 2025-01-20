@@ -17,6 +17,11 @@ class ClienteModelViewSet(GenericViewSet):
 
     @action(detail=True, methods=['GET'], url_path='consultar-boleto')
     def consultar_boleto(self, request, pk):
+        '''
+        Consultar boletos
+
+        Endpoint permite consultar os boletos de um cliente.
+        '''
         cliente: Cliente = self.get_object()
         boletos = cliente.boleto_set.all()
         serializer = self.get_serializer(boletos, many=True)
@@ -24,6 +29,11 @@ class ClienteModelViewSet(GenericViewSet):
 
     @action(detail=False, methods=['POST'], url_path='consultar-documento')
     def consultar_documento(self, request):
+        '''
+        Consultar cliente
+
+        Endpoint permite consultar os dados de um cliente apartir de um documento
+        '''
         queryset = self.get_queryset()
         serializer: ClienteDocumentoSerializer = self.get_serializer(request.data)
         documento = serializer.data.get('documento')
