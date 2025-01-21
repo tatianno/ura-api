@@ -1,0 +1,13 @@
+server {
+    listen 80;
+    server_name backend;
+
+    location /static/ {
+        alias /usr/src/ura-api/backend/static/;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/usr/src/ura-api/backend/app.sock;
+    }
+}
