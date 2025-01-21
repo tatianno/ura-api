@@ -3,7 +3,7 @@ server {
     server_name backend;
 
     location /static/ {
-        root /usr/src/ura-api/src/static/;
+        alias /usr/src/ura-api/src/static/;
     }
 
     location / {
