@@ -11,13 +11,13 @@ Group=www-data
 WorkingDirectory=/usr/src/ura-api/backend
 
 # Comando para iniciar o Gunicorn
-ExecStart=/usr/src/ura-api/venv/bin/gunicorn \
+ExecStart=/usr/src/ura-api/backend/venv/bin/gunicorn \
     --workers 3 \
     --bind unix:/usr/src/ura-api/backend/app.sock \
     app.wsgi:application
 
 # Ambiente Python
-Environment="PATH=/usr/src/ura-api/venv/bin"
+Environment="PATH=/usr/src/ura-api/backend/venv/bin"
 
 [Install]
 WantedBy=multi-user.target
