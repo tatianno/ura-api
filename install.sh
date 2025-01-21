@@ -2,7 +2,6 @@
 apt update && apt upgrade -y
 apt install python3 python3-pip python3-venv git nginx -y
 
-chown www-data:www-data /usr/src/ura-api/src/ -R
 
 python3 -m venv venv
 source venv/bin/activate
@@ -12,6 +11,8 @@ pip install -r requirements.txt
 python src/manage.py migrate
 python src/manage.py collectstatic --noinput
 python src/manage.py createsuperuser
+
+chown www-data:www-data /usr/src/ura-api/src/ -R
 
 deactivate
 
