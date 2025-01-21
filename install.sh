@@ -2,7 +2,7 @@
 apt update && apt upgrade -y
 apt install python3 python3-pip python3-venv git nginx -y
 
-sudo chown -R www-data:www-data /usr/src/ura-api/src
+chown www-data:www-data /usr/src/ura-api/src/ -R
 
 python3 -m venv venv
 source venv/bin/activate
