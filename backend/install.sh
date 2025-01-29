@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 python manage.py migrate
 python manage.py collectstatic --noinput
-python manage.py createsuperuser
+python scripts/configuracoes_iniciais/main.py
 
 chown www-data:www-data /usr/src/ura-api/backend/ -R
 
