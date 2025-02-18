@@ -17,8 +17,8 @@ class MenuPrincipalTestCase(TestCase):
             menu_principal._reproduzir_prompt_informe_documento
         )
     
-    def test_reproduzir_prompt_informe_documento_invalido(self):
-        dados_cliente = dados_recebidos = {
+    def test_reproduzir_prompt_informe_documento_valido(self):
+        dados_recebidos = {
             "id": 3,
             "nome": "Calebe e Fátima Entulhos Ltda",
             "em_massiva": True

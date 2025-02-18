@@ -1,15 +1,12 @@
 from validate_docbr import CPF, CNPJ
 from agi.base_agi import BaseAgi
+from .constants import LIMITE_TENTATIVAS
 from entities.cliente import Cliente
+from .exceptions import ExcedidoLimiteTentativasException
 from services.base_service import BaseApiClienteService
 
 
-LIMITE_TENTATIVAS = 3
-
 class DocumentoInvalidoException(Exception): ...
-
-
-class ExcedidoLimiteTentativasException(Exception): ...
 
 
 class MenuPrincipal:
